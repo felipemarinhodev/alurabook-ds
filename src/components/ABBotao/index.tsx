@@ -14,6 +14,6 @@ const BotaoEstilizado = styled.button`
   }
 `;
 
-export default function ABBotao() {
+export function ABBotao() {
   return <BotaoEstilizado>Clique aqui!</BotaoEstilizado>;
 }

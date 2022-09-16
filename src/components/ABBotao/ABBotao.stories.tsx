@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import ABBotao from '.';
+import { ABBotao } from '.';
 
 export default {
   title: 'Componentes/ABBotao',
