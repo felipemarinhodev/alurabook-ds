@@ -1,6 +1,19 @@
 import React from 'react';
-// import * as S from "./styles";
+import styled from 'styled-components';
+
+const BotaoEstilizado = styled.button`
+  background: #eb9b00;
+  padding: 16px 32px;
+  border: 2px solid #eb9b00;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  &:hover {
+    background: #b87900;
+    border: 2px solid #b87900;
+  }
+`;
 
 export default function ABBotao() {
-  return <button>Clique aqui!</button>;
+  return <BotaoEstilizado>Clique aqui!</BotaoEstilizado>;
 }
