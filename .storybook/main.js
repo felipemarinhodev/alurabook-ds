@@ -1,6 +1,7 @@
 module.exports = {
   stories: [
     '../stories/**/*.stories.@(ts|tsx|js|jsx)',
+    '../src/components/**/*.stories.@(ts|tsx|js|jsx)'
   ],
   addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
   // https://storybook.js.org/docs/react/configure/typescript#mainjs-configuration
