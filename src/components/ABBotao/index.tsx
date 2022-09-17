@@ -14,6 +14,10 @@ const BotaoEstilizado = styled.button`
   }
 `;
 
-export function ABBotao() {
-  return <BotaoEstilizado>Clique aqui!</BotaoEstilizado>;
+type BotaoProps = {
+  children: React.ReactNode;
+};
+
+export function ABBotao({ children }: BotaoProps) {
+  return <BotaoEstilizado>{children}</BotaoEstilizado>;
 }

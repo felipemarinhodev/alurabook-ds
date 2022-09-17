@@ -5,19 +5,24 @@ import * as S from './styles';
 import bag from './images/Vector.png';
 import like from './images/Vector-2.png';
 
-export function ABCard() {
+export type CardProp = {
+  title: string;
+  description: string;
+  author: string;
+  amount: number;
+};
+
+export function ABCard({ title, description, author, amount }: CardProp) {
   return (
     <S.Wrapper>
       <S.Content>
         <S.About>Sobre o livro</S.About>
-        <S.Title>Liderança em Design</S.Title>
-        <S.Description>
-          Habilidades de gestão para alavancar sua carreira
-        </S.Description>
-        <S.Author>Por: Vitor Zanini </S.Author>
+        <S.Title>{title}</S.Title>
+        <S.Description>{description}</S.Description>
+        <S.Author>Por: {author}</S.Author>
         <S.Price>
           <S.From>A partir de:</S.From>
-          <S.Amount>R$ 29,90</S.Amount>
+          <S.Amount>R$ {amount}</S.Amount>
         </S.Price>
       </S.Content>
       <S.ActionContent>
@@ -25,7 +30,7 @@ export function ABCard() {
           <img src={bag} alt="image of a bag" />
           <img src={like} alt="image of a heart" />
         </div>
-        <ABBotao />
+        <ABBotao>Comprar!</ABBotao>
       </S.ActionContent>
     </S.Wrapper>
   );
