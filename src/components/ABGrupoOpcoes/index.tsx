@@ -38,18 +38,29 @@ const Section = styled.section<{ selecionado: boolean }>`
   }
 `;
 
-export interface ABGrupoOpcoesProps {
-  selecionado: boolean;
+export interface ABGrupoOpcao {
+  id: number;
+  titulo: string;
+  corpo: string;
+  rodape: string;
 }
 
-export const ABGrupoOpcoes = ({ selecionado = false }: ABGrupoOpcoesProps) => {
+export interface ABGrupoOpcoesProps {
+  opcoes: ABGrupoOpcao[];
+}
+
+export const ABGrupoOpcoes = ({ opcoes }: ABGrupoOpcoesProps) => {
   return (
-    <Section selecionado={selecionado}>
-      <header>E-book</header>
-      <div>
-        <strong>R$ 00,00</strong>
-      </div>
-      <footer>.pdf, .epub, .mob</footer>
-    </Section>
+    <>
+      {opcoes.map(({ id, titulo, corpo, rodape }) => (
+        <Section selecionado={false} key={id}>
+          <header>{titulo}</header>
+          <div>
+            <strong>{corpo}</strong>
+          </div>
+          <footer>{rodape}</footer>
+        </Section>
+      ))}
+    </>
   );
 };

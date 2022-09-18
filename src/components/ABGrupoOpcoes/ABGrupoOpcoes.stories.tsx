@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { ABGrupoOpcoes } from '.';
+import { ABGrupoOpcoes, ABGrupoOpcoesProps } from '.';
 
 export default {
   title: 'Componentes/ABGrupoOpcoes',
@@ -13,8 +13,25 @@ const Template: ComponentStory<typeof ABGrupoOpcoes> = args => (
 
 export const Padrao = Template.bind({});
 
-export const Selecionado = Template.bind({});
-
-Selecionado.args = {
-  selecionado: true,
-};
+Padrao.args = {
+  opcoes: [
+    {
+      id: 1,
+      titulo: 'E-book',
+      corpo: 'R$ 00,00',
+      rodape: '.pdf, .epub, .mob',
+    },
+    {
+      id: 2,
+      titulo: 'Impresso',
+      corpo: 'R$ 00,00',
+      rodape: '.pdf, .epub, .mob',
+    },
+    {
+      id: 3,
+      titulo: 'Impresso + E-book',
+      corpo: 'R$ 00,00',
+      rodape: '.pdf, .epub, .mob',
+    },
+  ],
+} as ABGrupoOpcoesProps;
