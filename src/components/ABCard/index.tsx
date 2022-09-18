@@ -2,8 +2,8 @@ import React from 'react';
 import { ABBotao } from '../ABBotao';
 import * as S from './styles';
 
-import bag from './images/Vector.png';
-import like from './images/Vector-2.png';
+// import bag from './images/Vector.png';
+// import like from './images/Vector-2.png';
 
 export type CardProp = {
   title: string;
@@ -27,8 +27,8 @@ export function ABCard({ title, description, author, amount }: CardProp) {
       </S.Content>
       <S.ActionContent>
         <div>
-          <img src={bag} alt="image of a bag" />
-          <img src={like} alt="image of a heart" />
+          <img src="./images/Vector.png" alt="image of a bag" />
+          <img src="./images/Vector-2.png" alt="image of a heart" />
         </div>
         <ABBotao>Comprar!</ABBotao>
       </S.ActionContent>
