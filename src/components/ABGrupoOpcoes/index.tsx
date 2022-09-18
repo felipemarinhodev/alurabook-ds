@@ -47,13 +47,22 @@ export interface ABGrupoOpcao {
 
 export interface ABGrupoOpcoesProps {
   opcoes: ABGrupoOpcao[];
+  valorPadrao?: ABGrupoOpcao | null;
+  onChange?: (opcao: ABGrupoOpcao) => void;
 }
 
-export const ABGrupoOpcoes = ({ opcoes }: ABGrupoOpcoesProps) => {
-  const [selecionado, setSelecionado] = useState<ABGrupoOpcao | null>(null);
+export const ABGrupoOpcoes = ({
+  opcoes,
+  onChange,
+  valorPadrao,
+}: ABGrupoOpcoesProps) => {
+  const [selecionado, setSelecionado] = useState<ABGrupoOpcao | null>(
+    valorPadrao ?? null
+  );
 
   const handleSelect = (opcao: ABGrupoOpcao): void => {
     setSelecionado(opcao);
+    !!onChange && onChange(opcao);
   };
 
   return (

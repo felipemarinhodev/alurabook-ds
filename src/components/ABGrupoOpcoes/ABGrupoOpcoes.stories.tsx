@@ -34,4 +34,10 @@ Padrao.args = {
       rodape: '.pdf, .epub, .mob',
     },
   ],
+  valorPadrao: {
+    id: 2,
+    titulo: 'Impresso',
+    corpo: 'R$ 00,00',
+    rodape: '.pdf, .epub, .mob',
+  },
 } as ABGrupoOpcoesProps;
