@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const Section = styled.section<{ selecionado: boolean }>`
@@ -50,15 +50,25 @@ export interface ABGrupoOpcoesProps {
 }
 
 export const ABGrupoOpcoes = ({ opcoes }: ABGrupoOpcoesProps) => {
+  const [selecionado, setSelecionado] = useState<ABGrupoOpcao | null>(null);
+
+  const handleSelect = (opcao: ABGrupoOpcao): void => {
+    setSelecionado(opcao);
+  };
+
   return (
     <>
-      {opcoes.map(({ id, titulo, corpo, rodape }) => (
-        <Section selecionado={false} key={id}>
-          <header>{titulo}</header>
+      {opcoes.map(opcao => (
+        <Section
+          selecionado={selecionado?.id === opcao.id}
+          key={opcao.id}
+          onClick={() => handleSelect(opcao)}
+        >
+          <header>{opcao.titulo}</header>
           <div>
-            <strong>{corpo}</strong>
+            <strong>{opcao.corpo}</strong>
           </div>
-          <footer>{rodape}</footer>
+          <footer>{opcao.rodape}</footer>
         </Section>
       ))}
     </>
