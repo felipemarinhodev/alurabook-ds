@@ -7,6 +7,14 @@ export default {
   component: ABGrupoOpcoes,
 } as ComponentMeta<typeof ABGrupoOpcoes>;
 
-const Template: ComponentStory<typeof ABGrupoOpcoes> = () => <ABGrupoOpcoes />;
+const Template: ComponentStory<typeof ABGrupoOpcoes> = args => (
+  <ABGrupoOpcoes {...args} />
+);
 
 export const Padrao = Template.bind({});
+
+export const Selecionado = Template.bind({});
+
+Selecionado.args = {
+  selecionado: true,
+};
